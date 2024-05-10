@@ -29,9 +29,9 @@ def pagina_info():
     return render_template("info.html")
 
 
-@app.route("/tarifas")
-def pagina_tarifas():
-    return render_template("tarifas.html")
+@app.route("/tarifes")
+def pagina_tarifes():
+    return render_template("tarifes.html")
 
 
 @app.route("/contacte")
@@ -39,9 +39,9 @@ def pagina_contacte():
     return render_template("contacte.html")
 
 
-@app.route("/documentacio")
-def pagina_documentacio():
-    return render_template("documentacio.html")
+
+
+
 
 @app.route("/accesoempresas")
 def pagina_empresas():

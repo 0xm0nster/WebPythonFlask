@@ -2,33 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
-    {%if titolPagina%}
-    <title>Title - {{titolPagina}}</title>
-    {%else%}
-    <title>NomDeLaPagina</title>
-    {%endif%}
+    <title>{% if titolPagina %}{{ titolPagina }} - Restaurafacil{% else %}Restaurafacil{% endif %}</title>
+    <!-- Incluyendo Bootstrap desde el CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-<header>
-    <nav>
+<header class="bg-dark text-white p-3">
+    <nav class="container d-flex justify-content-between">
         <div class="left-section">
-            <a href="inici">Inici</a>
-            <a href="tarifas">Tarifas</a>
-            <a href="documentacio">Documentacio</a>
-            <a href="contacte">Contacte</a>
-        </div>
+            <a href="{{ url_for('pagina_inici') }}" class="text-white">Inici</a>
+            <a href="{{ url_for('pagina_tarifes') }}" class="text-white">Tarifes</a>
+            <a href="{{ url_for('pagina_contacte') }}" class="text-white">Contacte</a>
         </div>
         <div class="right-section">
-            <div class="right-section">
-              <a href="accesoempresas">Acceso empresas</a>;
-            </div>
-            </div>
+            <a href="{{ url_for('pagina_empresas') }}" class="accesoempresas text-white">Acceso empresas</a>
+        </div>
     </nav>
 </header>
 
-{% block contingut %}
-{% endblock %}
+<main class="container my-5">
+    {% block contingut %}
+    {% endblock %}
+</main>
 
+<footer class="bg-dark text-white text-center p-3">
+    © 2024 Restaurafacil
+</footer>
+<!-- Incluyendo JavaScript de Bootstrap desde el CDN -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

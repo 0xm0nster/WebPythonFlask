@@ -1,11 +1,24 @@
 {% extends "layout.html" %}
-{%block contingut%}
-<h1>Pagina Inici</h1>
+{% block contingut %}
+<div class="home-page text-center">
+    <h1 class="page-title">Bienvenido a Restaurafacil.com</h1>
+    <p class="intro-text">Restaurafacil.com es tu solución integral para la gestión eficiente de restaurantes. Simplifica la administración de tu restaurante con nuestras herramientas innovadoras y fáciles de usar.</p>
 
-{% for post in variable_dades %}
-<h2>{{post.titol}}</h2>
-<p>{{post.contingut}}</p>
-<p>{{post.autor}} - {{post.data}}</p>
-{% endfor %}
-{%endblock%}
+    <div class="features mt-4">
+        <h2 class="section-title">Características Principales</h2>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Acceso a la plataforma desde cualquier dispositivo.</li>
+            <li class="list-group-item">Gestión de menús y pedidos en tiempo real.</li>
+            <li class="list-group-item">Visualización de estadísticas y reportes detallados.</li>
+            <li class="list-group-item">Configuración inicial sencilla y rápida.</li>
+            <li class="list-group-item">Soporte para múltiples perfiles de usuario.</li>
+        </ul>
+    </div>
 
+    <div class="cta-section mt-5">
+        <h2 class="cta-title">¡Empieza hoy mismo!</h2>
+        <p>Contacta con nosotros para obtener más información y personalizar tu plan a medida.</p>
+        <a href="{{ url_for('pagina_contacte') }}" class="btn btn-success btn-lg">Contáctanos</a>
+    </div>
+</div>
+{% endblock %}
