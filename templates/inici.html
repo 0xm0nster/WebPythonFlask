@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{%block contingut%}
+<h1>Pagina Inici</h1>
+
+{% for post in variable_dades %}
+<h2>{{post.titol}}</h2>
+<p>{{post.contingut}}</p>
+<p>{{post.autor}} - {{post.data}}</p>
+{% endfor %}
+{%endblock%}
+
